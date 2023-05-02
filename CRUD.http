@@ -1,16 +1,93 @@
 GET https://localhost:7241/api/Profile
 ###
 
-GET https://localhost:7241/api/Profile/3
-
+GET https://localhost:7241/api/Profile?orderby=name
 ###
 
+GET https://localhost:7241/api/Profile?orderby=name
+###
+
+GET https://localhost:7241/api/Profile?orderby=id desc
+###
+
+GET https://localhost:7241/api/Profile?$skip=2 & ?$top=3
+###
+
+
+
+GET https://localhost:7241/api/Profile?$select=id
+###
+
+GET https://localhost:7241/api/Profile?$select=name & $filter=name eq 'Tom' and id gt 4
+###
+
+GET https://localhost:7241/api/Profile?$select=id
+###
+
+GET https://localhost:7241/api/Profile?$filter=name eq 'Richard' and id eq 1
+###
+
+GET https://localhost:7241/api/Profile?$filter=name eq 'Richard' or id eq 2
+###
+
+GET https://localhost:7241/api/Profile?$filter=name ne 'Richard'
+###
+
+GET https://localhost:7241/api/Profile?$filter=name ne 'Richard' and id lt 3
+###
+
+GET https://localhost:7241/api/Profile?$filter=name ne 'Richard' and id gt 3
+###
+
+GET https://localhost:7241/api/Profile?$filter= contains( name, 'Richard')
+###
+
+GET https://localhost:7241/api/Profile?$filter= contains( name, 'Tom') & id gt 4
+###
+
+
+GET https://localhost:7241/api/Profile?$filter= name in('Tom', 'Richard')
+###
+
+GET https://localhost:7241/api/Profile/?filter=id ne 2
+###
+
+GET https://localhost:7241/api/Profile/?filter=id gt 3
+###
+
+GET https://localhost:7241/api/Profile/?filter=id ge 3
+###
+
+GET https://localhost:7241/api/Profile/?filter=id le 3
+###
+
+GET https://localhost:7241/api/Profile/?filter=id lt 3
+###
+
+
+
+POST https://localhost:7241/api/Profile/Tom
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "Tom "
+}
+###
+POST https://localhost:7241/api/Profile
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Richard"
+}
+###
 POST https://localhost:7241/api/Profile
 Content-Type: application/json
 
 {
   "id": 2,
-  "name": "2nd "
+  "name": "Richardson"
 }
 ###
 POST https://localhost:7241/api/Profile
@@ -18,7 +95,7 @@ Content-Type: application/json
 
 {
   "id": 3,
-  "name": ""
+  "name": "Tom"
 }
 ###
 POST https://localhost:7241/api/Profile
@@ -26,29 +103,32 @@ Content-Type: application/json
 
 {
   "id": 4,
-  "name": "4th"
+  "name": "Richarso Smith"
 }
+
 ###
+
 POST https://localhost:7241/api/Profile
 Content-Type: application/json
 
 {
   "id": 5,
-  "name": "5th"
+  "name": "Tom Cruise"
 }
-
 
 ###
 PUT   https://localhost:7241/api/Profile
 Content-Type: application/json
 
 {
-"id": 3,
-  "name": "third - 3rd"
+"id": 4,
+  "name": "Richard Smith"
 
 }
 
 ###
 
-DELETE https://localhost:7241/api/Profile?Id=4
+
+
+DELETE https://localhost:7241/api/Profile?Id=2
 
