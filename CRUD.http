@@ -1,6 +1,28 @@
 GET https://localhost:7241/api/Profile
 ###
 
+POST https://localhost:7013/graphql/ HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+
+{
+  flavours
+ {
+  style1
+  style2
+  //icecream
+ //{
+  //ic1
+  //ic2
+}
+ }
+ //}
+
+###
+
+
+
+
 GET https://localhost:7241/api/Profile?orderby=name
 ###
 
